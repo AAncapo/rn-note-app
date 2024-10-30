@@ -2,6 +2,7 @@
   "expo": {
     "name": "rn-note-app",
     "slug": "rn-note-app",
+    "scheme": "noteapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -22,6 +23,15 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-font",
+        {
+          "fonts": ["./assets/fonts/InstrumentSans-VariableFont_wdth,wght.ttf"]
+        }
+      ]
+    ]
   }
 }
