@@ -9,8 +9,9 @@ export default function useDatabase() {
     setToStorage("data", database);
   }, [database]);
 
-  const setNotes = (newNotes) =>
+  const setNotes = (newNotes) => {
     setDatabase({ ...database, notes: [...newNotes] });
+  };
 
   const setConfig = (newConfig) =>
     setDatabase({ ...database, settings: [...newConfig] });

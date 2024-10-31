@@ -1,9 +1,9 @@
 import React, { createRef, useEffect } from "react";
 import { ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 import { Stack, useLocalSearchParams } from "expo-router";
-import SettingsButton from "../components/settings-button";
-import { Color } from "../constants/colors";
 import useNotes from "../hooks/useNotes";
+import { Color } from "../constants/colors";
+import SettingsButton from "../components/settings-button";
 
 export default function Note() {
   const { id } = useLocalSearchParams();
@@ -47,6 +47,7 @@ export default function Note() {
         <TextInput
           ref={contentInput}
           multiline
+          textAlignVertical="top"
           autoCorrect={false}
           style={styles.content}
           placeholder="Write some content..."
