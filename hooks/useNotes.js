@@ -1,5 +1,6 @@
 import { router } from "expo-router";
 import useDatabase from "./useDatabase";
+import * as Crypto from "expo-crypto";
 
 export default function useNotes() {
   const { notes, setNotes } = useDatabase();
@@ -7,11 +8,12 @@ export default function useNotes() {
   const addNote = ({ _title = "" }) => {
     console.log("added note");
     const newNote = {
-      id: (Math.random() * 100000).toString(),
+      id: Crypto.randomUUID(),
       title: _title,
       content: "",
       createdAt: "",
       lastModified: "",
+      preview: { title: "", content: "" },
       tags: [],
       pinned: false,
     };

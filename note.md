@@ -65,3 +65,5 @@ export const Icon? = (props) => (
 # AsyncStorage
 
 -> npx expo install @react-native-async-storage/async-storage
+
+npx expo install expo-crypto

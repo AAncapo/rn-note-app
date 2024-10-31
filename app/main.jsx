@@ -8,12 +8,10 @@ import NoteCard from "../components/note-card";
 import { AddIcon } from "../components/Icons";
 import SearchBar from "../components/main/search-bar";
 import SettingsButton from "../components/settings-button";
-// import Filters from "../components/main/filters";
 
 export default function Main() {
   const { config } = useDatabase();
   const { notes, addNote } = useNotes();
-  // const [filtersVisible, setFiltersVisible] = useState(false);
 
   return (
     <>
@@ -34,10 +32,6 @@ export default function Main() {
                 <SettingsButton />
               </View>
               <SearchBar onSubmit={addNote} />
-              {/* <Filters
-                visible={filtersVisible}
-                setVisible={setFiltersVisible}
-              /> */}
             </View>
           ),
         }}
