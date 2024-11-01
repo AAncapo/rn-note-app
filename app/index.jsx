@@ -1,10 +1,10 @@
-import { useContext, useEffect } from "react";
-import { DatabaseContext } from "../context/database-context";
-import { getFromStorage } from "../services/async-strorage-handler";
+import { useEffect } from "react";
 import { router } from "expo-router";
+import useGlobal from "../hooks/useGlobal";
+import { getFromStorage } from "../services/async-strorage-handler";
 
 export default function Index() {
-  const { setDatabase } = useContext(DatabaseContext);
+  const { setDatabase } = useGlobal();
 
   useEffect(() => {
     getFromStorage("data").then((data) => {

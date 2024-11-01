@@ -1,7 +1,7 @@
 import { Stack } from "expo-router";
 import { StyleSheet, View } from "react-native";
 import { Color } from "../constants/colors";
-import { DatabaseProvider } from "../context/database-context";
+import { GlobalProvider } from "../context/global-context";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
@@ -20,7 +20,7 @@ export default function Layout() {
   if (!loaded && !error) return null;
 
   return (
-    <DatabaseProvider>
+    <GlobalProvider>
       <View style={styles.container}>
         <Stack
           screenOptions={{
@@ -30,7 +30,7 @@ export default function Layout() {
           }}
         />
       </View>
-    </DatabaseProvider>
+    </GlobalProvider>
   );
 }
 

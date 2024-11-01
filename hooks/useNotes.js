@@ -1,16 +1,18 @@
 import { router } from "expo-router";
 import useDatabase from "./useDatabase";
-import * as Crypto from "expo-crypto";
-
+import { createContent } from "../templates/content";
+import { getRandomUUID } from "../services/crypto";
 export default function useNotes() {
   const { notes, setNotes } = useDatabase();
 
   const addNote = ({ _title = "" }) => {
-    console.log("added note");
+    // console.log("added note");
+    //TODO: wipe data
+    // const content = new Content();
     const newNote = {
-      id: Crypto.randomUUID(),
-      title: _title,
-      content: "",
+      id: getRandomUUID(),
+      title: "",
+      contents: [createContent()],
       createdAt: "",
       lastModified: "",
       preview: { title: "", content: "" },

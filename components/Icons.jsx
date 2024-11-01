@@ -3,6 +3,20 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import Fontisto from "@expo/vector-icons/Fontisto";
+import Entypo from "@expo/vector-icons/Entypo";
+
+export const ImageIcon = (props) => (
+  <Entypo name="image" size={24} color="black" {...props} />
+);
+
+export const CheckboxIcon = ({ checked = false }) => (
+  <Fontisto
+    name={checked ? "checkbox-active" : "checkbox-passive"}
+    size={20}
+    color="black"
+  />
+);
 
 export const PinIcon = (props) => (
   <MaterialCommunityIcons

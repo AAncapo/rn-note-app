@@ -3,6 +3,7 @@ import React from "react";
 import { PinIcon } from "./Icons";
 import { textStyle } from "../constants/colors";
 import { Link } from "expo-router";
+import useGlobal from "../hooks/useGlobal";
 
 export default function NoteCard({ note, config }) {
   return (
@@ -19,11 +20,11 @@ export default function NoteCard({ note, config }) {
           <Text numberOfLines={1} style={styles.title}>
             {note.title}
           </Text>
-          {config.showContent && (
+          {/* {config.showContent && (
             <Text numberOfLines={config.numberOfLines} style={styles.content}>
               {note.content}
             </Text>
-          )}
+          )} */}
           <View style={styles.footer}>
             {config.showTags && (
               <View style={styles.tags}>

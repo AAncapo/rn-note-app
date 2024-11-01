@@ -1,12 +1,12 @@
 import { setToStorage } from "../services/async-strorage-handler";
-import { DatabaseContext } from "../context/database-context";
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
+import useGlobal from "./useGlobal";
 
 export default function useDatabase() {
-  const { database, setDatabase } = useContext(DatabaseContext);
+  const { database, setDatabase } = useGlobal();
 
   useEffect(() => {
-    setToStorage("data", database);
+    // setToStorage("data", database);
   }, [database]);
 
   const setNotes = (newNotes) => {
